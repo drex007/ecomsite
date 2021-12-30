@@ -10,3 +10,18 @@ class Product(models.Model):
     category = models.CharField(max_length=200)
     description = models.TextField()
     image = models.CharField(max_length=350)
+    quantity = models.IntegerField(default=1)
+
+    def __str__(self):
+        return  self.title
+
+class Cart(models.Model):
+    product = models.ForeignKey('Product', on_delete=models.CASCADE)
+
+
+    def __str__(self):
+        return self.product.title
+
+   
+        
+        
