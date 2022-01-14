@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from shop.views import index,detail
+from shop.views import index,detail, checkout
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index, name = 'homes' ),
     path('<int:id>/',detail, name = 'details' ),
+   
+   path('checkout/',checkout, name = 'checkout' ),
    
 ]

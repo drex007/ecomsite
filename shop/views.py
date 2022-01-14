@@ -23,6 +23,9 @@ def detail(request, id):
     context = {'product_object': product_object}
     return render(request, 'detail.html',context)
 
+def checkout(request):
+    return render (request, 'checkout.html', {})
+
 
 
 
