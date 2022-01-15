@@ -22,6 +22,20 @@ class Cart(models.Model):
     def __str__(self):
         return self.product.title
 
+
+class Order(models.Model):
+    items = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    address = models.CharField(max_length=100)
+    city = models.CharField(max_length=100)
+    state = models.CharField(max_length=100)
+    zipcode = models.CharField(max_length=100)
+    total_price = models.IntegerField()
+    date_of_order = models.DateTimeField(auto_now =True)
+  
+    def __str__(self):
+        return   self.name + "Order"
    
         
         

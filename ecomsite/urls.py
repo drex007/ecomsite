@@ -19,7 +19,7 @@ from shop.views import index,detail, checkout
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',index, name = 'homes' ),
+    path('',index, name = 'home' ),
     path('<int:id>/',detail, name = 'details' ),
    
    path('checkout/',checkout, name = 'checkout' ),
