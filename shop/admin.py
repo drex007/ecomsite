@@ -9,8 +9,14 @@ admin.site.site_title = "Ecom store "
 admin.site.index_title = "Ecomsite"
 
 class ProductAdmin(admin.ModelAdmin):
+
+    def change_category_to_default(self,request, queryset):
+        queryset.update(category ="default")
+
     list_display = ('title','price','discount_price', 'category','image')
     search_fields = ('title',)
+    actions = ('change_category_to_default',)
+    list_editable = ('price', 'category',)
 
 
 class OrderAdmin(admin.ModelAdmin):
